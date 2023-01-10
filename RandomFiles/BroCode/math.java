@@ -1,3 +1,5 @@
+package BroCode;
+
 import java.util.Scanner;
 
 public class math 

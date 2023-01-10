@@ -1,4 +1,4 @@
-package RandomFiles;
+package BroCode;
 import java.util.Scanner;
 
 
@@ -21,5 +21,7 @@ public class input
         System.out.println("Hello " +name);
         System.out.println("You are "+age+" years old");
         System.out.println("You like " + food);
+
+        scanner.close();
     }    
 }

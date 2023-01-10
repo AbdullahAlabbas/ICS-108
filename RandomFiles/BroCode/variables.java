@@ -1,4 +1,4 @@
-package RandomFiles;
+package BroCode;
 public class variables
  {
     public static void main(String[] args) 
@@ -8,5 +8,10 @@ public class variables
         boolean z = true;
         char symbol = '@';
         String name = "Abdullah";
+
+        System.out.println(x+y+symbol+name);
+        System.out.println(z);
     }
+
+    
  }

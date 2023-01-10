@@ -1,3 +1,5 @@
+package BroCode;
+
 import java.util.Scanner;
 
 public class nested 
@@ -26,5 +28,6 @@ public class nested
                 System.out.print(symbol);
             }
         }
+    scanner.close();
     }    
 }

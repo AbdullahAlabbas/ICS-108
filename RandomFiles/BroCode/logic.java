@@ -1,3 +1,5 @@
+package BroCode;
+
 import java.util.Scanner;
 
 public class logic 
@@ -17,5 +19,6 @@ public class logic
         {
             System.out.println("Not bey");
         }
+        scanner.close();
     }    
 }
