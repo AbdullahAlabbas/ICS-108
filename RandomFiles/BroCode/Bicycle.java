@@ -1,4 +1,4 @@
-package BroCode;
+package RandomFiles.BroCode;
 public class Bicycle extends Vehicle
 {
     int wheels = 2;

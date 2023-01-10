@@ -1,4 +1,6 @@
-package BroCode;
+package RandomFiles.BroCode;
+
+
 public class superMan 
 {
     public static void main(String[] args)

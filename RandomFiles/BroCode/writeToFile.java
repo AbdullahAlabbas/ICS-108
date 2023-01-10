@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 import java.io.FileWriter;
 import java.io.IOException;
 

@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 public class Hawk implements Predator 
 {
 

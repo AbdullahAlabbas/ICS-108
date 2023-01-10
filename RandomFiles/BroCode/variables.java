@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 public class variables
  {
     public static void main(String[] args) 

@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 import java.io.File;
 
 public class FileSearch 

@@ -1,4 +1,4 @@
-package BroCode;
+package RandomFiles.BroCode;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

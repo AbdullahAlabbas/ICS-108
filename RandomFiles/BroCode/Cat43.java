@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 public class Cat43 extends Animal43
 {
     @Override

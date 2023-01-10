@@ -1,4 +1,4 @@
-package BroCode;
+package RandomFiles.BroCode;
 
 public class cunstructerOOp
 {

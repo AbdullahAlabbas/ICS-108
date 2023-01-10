@@ -1,4 +1,5 @@
-package BroCode;
+package RandomFiles.BroCode;
+
 import javax.swing.JOptionPane;
 
 public class gui 
