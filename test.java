@@ -1,16 +1,19 @@
 import java.util.Scanner;
 
-public class test 
+public class Test 
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-        System.out.println("Enrer num");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("x: ");
+        int x = scanner.nextInt();
 
-        Scanner input = new Scanner(System.in);
-        int i = input.nextInt();
+        System.out.print("y: ");
+        int y = scanner.nextInt();
 
-        System.out.println(i);
+        int z =x + y;
+        System.out.println(z);
 
-        input.close();
+        scanner.close();
     }
 }
