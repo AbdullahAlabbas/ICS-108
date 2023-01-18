@@ -1,0 +1,63 @@
+
+import java.util.Scanner;
+
+public class Task01 
+{
+    public static void main(String[] args) 
+    {
+        String letterGrade;
+        int numOfCourses,credit = 0 , sumOfCredit = 0;
+        double gpa,sumOfNumericValues = 0;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("How many courses?");
+        numOfCourses = input.nextInt();
+
+        System.out.printf("%s %d %s", "Enter letter grade, credit hours for ", numOfCourses , " courses:\n");
+        for(int i = 0; i < numOfCourses; i++)
+        {
+            letterGrade = input.next();
+            credit = input.nextInt();
+            sumOfCredit += credit;
+
+            if(letterGrade.equals("A+"))
+            sumOfNumericValues += (4.00 * credit);
+            
+            else if (letterGrade.equals("A"))
+            sumOfNumericValues += (3.75 * credit);
+
+            else if (letterGrade.equals("B+"))
+            sumOfNumericValues += (3.50 * credit);
+
+            else if (letterGrade.equals("B"))
+            sumOfNumericValues += (3.00 * credit);
+
+            else if (letterGrade.equals("C+"))
+            sumOfNumericValues += (2.50 * credit);
+
+            else if (letterGrade.equals("C"))
+            sumOfNumericValues += (2.00 * credit);
+
+            else if (letterGrade.equals("D+"))
+            sumOfNumericValues += (1.50 * credit);
+
+            else if (letterGrade.equals("D"))
+            sumOfNumericValues += (1.00 * credit);
+
+            else if (letterGrade.equals("F"))
+            sumOfNumericValues += 0.0;
+
+            else
+            {
+            System.out.println("That is not a letter Grade!");
+            break;
+            }
+        }
+        
+        gpa = sumOfNumericValues / sumOfCredit;
+        System.out.println("GPA = " + gpa);
+        input.close();
+
+        
+    }    
+}
