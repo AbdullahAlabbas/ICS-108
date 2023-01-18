@@ -14,7 +14,7 @@ public class Task01v2
         numOfCourses = input.nextInt();
 
         System.out.printf("%s %d %s", "Enter letter grade, credit hours for ", numOfCourses , " courses:\n");
-        while(i < numOfCourses)
+        while(i < numOfCourses) // or for(int i = 0; i < numOfCourses; i++)
         {
             letterGrade = input.next();
             credit = input.nextInt();
