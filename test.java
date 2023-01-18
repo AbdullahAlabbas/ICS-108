@@ -44,4 +44,7 @@ public class Test {
 
         double gpa = totalGradePoints / totalCreditHours;
 
-        System.out.println("The GPA is: "+ gpa);     } }
+        System.out.println("The GPA is: "+ gpa);
+        input.close();
+     }
+     }
