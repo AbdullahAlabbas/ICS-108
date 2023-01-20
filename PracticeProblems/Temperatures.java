@@ -1,4 +1,4 @@
-package RandomFiles.LecturesQuestions;
+package PracticeProblems;
 import java.util.Scanner;
 
 public class Temperatures 
