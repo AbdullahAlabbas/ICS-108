@@ -1,51 +1,41 @@
-package Labs.Lab04;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Task01 
-{
-        public static void main(String[] args)
-        {
-
-        ArrayList<Integer> theObjects = new ArrayList<Integer>();
+public class Task01 {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        final int SIZE, MAX_WEIGHT = 10;
+        int counter,total,number;
+        ArrayList<Integer> weights = new ArrayList<Integer>();
 
-        System.out.print("Enter the number of objects: ");
-        int numOfObjects = input.nextInt();
+        System.out.print("Enter the number of the objects: ");
+        SIZE = input.nextInt();
+        System.out.print("Enter the weight of the objects: ");
 
-        System.out.print("Enter the weights of the objects: ");
-        for(int i = 0 ; i < numOfObjects ;i++)
-        {
-            theObjects.add(input.nextInt());
+
+        for(int i = 0; i < SIZE ;i++){
+            weights.add(input.nextInt());
         }
         input.close();
 
-        container(theObjects);
+        counter = 1;
 
-        }
-        public static void container(ArrayList<Integer> theObjects)
-        {
-            int maxWeight = 0;  
+        while(!weights.isEmpty()){
+            ArrayList<Integer> objectOfContainer = new ArrayList<Integer>();
+            total = 0;
 
-            System.out.print("The container contains ");
-            for(int i = 0; i < theObjects.size() ;i++)
-            {
-                if(maxWeight + theObjects.get(i)  < 10)
-                {
-                    maxWeight += theObjects.get(i);
-                    System.out.print(theObjects.get(i) + " ");
+            for(int i = 0; i < weights.size(); i++){
+                if((total + weights.get(i)) <= MAX_WEIGHT){
+                    number = weights.remove(i);
+                    i--;
+                    objectOfContainer.add(number);
+                    total +=number;
                 }
-
-                else
-                {
-
-                }
-    
             }
 
+            System.out.println("Container "+counter+" contains object with weight "+ objectOfContainer.toString());
+
+            counter++;
         }
-
+    }
 }
-
-
-
