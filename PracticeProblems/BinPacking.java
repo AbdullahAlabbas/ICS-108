@@ -1,4 +1,4 @@
-package Labs.Lab04;
+package PracticeProblems;
 import java.util.Scanner;
 
 public class BinPacking {

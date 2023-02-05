@@ -1,4 +1,4 @@
-package Labs.Lab04;
+package PracticeProblems;
 public class StudentScore {
 
     public static void main(String[] args) {
