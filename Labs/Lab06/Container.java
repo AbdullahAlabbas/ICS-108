@@ -1,10 +1,8 @@
 package Labs.Lab06;
 import java.util.ArrayList;
 
-
-
 public class Container {
-    ArrayList<Integer> items = new ArrayList<Integer>();
+    ArrayList<Integer> ArrayofObjects = new ArrayList<Integer>();
     int maxWeight;
     int currentTotalWeight = 0;
 
@@ -16,13 +14,10 @@ public class Container {
     public boolean addItem(int itemWeight) {
 
         if (currentTotalWeight + itemWeight <= maxWeight) {
-            items.add(itemWeight);
+            ArrayofObjects.add(itemWeight);
             currentTotalWeight+=itemWeight;
             return true;
         }
         return false;
     }
-
-
-
 }
