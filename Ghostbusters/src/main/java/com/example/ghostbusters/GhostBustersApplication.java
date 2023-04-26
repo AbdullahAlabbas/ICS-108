@@ -1,5 +1,6 @@
 package com.example.ghostbusters;
 
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -10,15 +11,23 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+
+
+
 public class GhostBustersApplication extends Application {
     private int score = 0;
     private int objectValue = 10;
     private int objectSpeed = 2;
     private int objectsDropped = 0;
-    private Pane root = new Pane();
-    private ImageView object = new ImageView(new Image("Ghost.png"));
-    private Text scoreText = new Text("Score: 0");
-    private Text gameOverText = new Text("Game Over");
+    final Pane root = new Pane();
+
+    final Ghost ghost1 = new Ghost(10,"Ghost.png");
+    final Ghost ghost2 = new Ghost(5,"Ghost2.png");
+    final ImageView object1 = ghost1.object();
+    final ImageView object2 = ghost2.object();
+    final Text scoreText = new Text("Score: 0");
+    final Text gameOverText = new Text("Game Over");
     public void start(Stage primaryStage) {
         // Create game layout
         BackgroundImage backgroundImage = new BackgroundImage(
@@ -28,22 +37,33 @@ public class GhostBustersApplication extends Application {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         root.setBackground(new Background(backgroundImage));
-        root.getChildren().addAll(object, scoreText);
+        root.getChildren().addAll( scoreText);
+        //scoreText
         scoreText.setFont(Font.font("Chiller", 40));
         scoreText.setFill(Color.WHITE);
         scoreText.setLayoutX(10);
         scoreText.setLayoutY(30);
+        //gameOverText
         gameOverText.setFont(Font.font("Chiller", 90));
         gameOverText.setFill(Color.RED);
         gameOverText.setLayoutX(80);
         gameOverText.setLayoutY(300);
         gameOverText.setVisible(false);
         root.getChildren().add(gameOverText);
-        object.setOnMouseClicked(event -> {
-            root.getChildren().remove(object);
-            score += objectValue;
+        //object
+        object1.setOnMouseClicked(event -> {
+            root.getChildren().remove(object1);
+            score += ghost1.getScore();
             scoreText.setText("Score: " + score);
-            objectSpeed += 50;});
+            objectSpeed += 1;
+        });
+        object2.setOnMouseClicked(event -> {
+            root.getChildren().remove(object2);
+            score += ghost2.getScore();
+            scoreText.setText("Score: "+ score);
+            objectSpeed += 1;
+        });
+        //scene
         Scene gameScene = new Scene(root, 400, 600);
         primaryStage.setTitle("GhostBusters");
         primaryStage.setScene(gameScene);
@@ -51,20 +71,36 @@ public class GhostBustersApplication extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (objectsDropped >= 5) {
+                if (objectsDropped >= 10 ) {
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);
                     return;}
-                object.setLayoutY(object.getLayoutY() + objectSpeed);
-                if (object.getLayoutY() > 600) {
+                int random = (int)Math.floor(Math.random() * 2);
+
+                    object1.setLayoutY(object1.getLayoutY() + objectSpeed+2);
+                    object2.setLayoutY(object2.getLayoutY() + objectSpeed+1);
+
+
+                if (object1.getLayoutY() > 600 ) {
                     double randomX = Math.random() * 300;
-                    object.setLayoutX(randomX);
-                    object.setLayoutY(0);
-                    objectValue = 10;
-                    objectSpeed = 2;
+                    object1.setLayoutX(randomX);
+                    object1.setLayoutY(0);
                     objectsDropped++;
-                    root.getChildren().add(object);}}};
-        timer.start();}
+                    root.getChildren().add(object1);
+                }
+                if(object2.getLayoutY() > 600){
+                    double randomX = Math.random()*300;
+                    object2.setLayoutX(randomX);
+                    object2.setLayoutY(0);
+                    objectsDropped++;
+                    root.getChildren().add(object2);
+                }
+            }
+        };
+        timer.start();
+    }
+
+
 
 
     public static void main(String[] args) {
