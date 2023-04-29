@@ -74,7 +74,7 @@ public class GhostBustersApplication extends Application {
                     objectSpeed = 2;
                     objectsDropped = 0;
 
-                    root.getChildren().remove(gameOverText);
+                    gameOverText.setVisible(false);
                     restartButton.setVisible(false);
 
                     root.getChildren().add(scoreText);
