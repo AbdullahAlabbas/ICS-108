@@ -25,13 +25,16 @@ public class GhostBustersApplication extends Application {
     private int objectsDropped = 0;
     final Pane root = new Pane();
 
+    AnimationTimer timer;
+
     final Ghost ghost1 = new Ghost(10,"Ghost.png");
     final Ghost ghost2 = new Ghost(5,"Ghost2.png");
     final ImageView object1 = ghost1.object();
     final ImageView object2 = ghost2.object();
     final Text scoreText = new Text("Score: 0");
     final Text gameOverText = new Text("Game Over");
-    final Button restartButton = new Button("TRY AGAIN?");
+    final ImageView restartButton = new ImageView(new Image("Retrybutton.png"));
+    final ImageView startButton = new ImageView(new Image("Start.png"));
     public void start(Stage primaryStage) {
         // Create game layout
         BackgroundImage backgroundImage = new BackgroundImage(
@@ -64,12 +67,28 @@ public class GhostBustersApplication extends Application {
         object2.setOnMouseClicked(event -> {
             root.getChildren().remove(object2);
             score += ghost2.getScore();
-            scoreText.setText("Score: "+ score);
+            scoreText.setText("Score: " + score);
             objectSpeed += 1;
-            // restartButton
-            restartButton.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
+        });
+
+        //startButton
+        startButton.setOnMouseClicked(mouseEvent -> {
+
+            timer.start();
+            startButton.setVisible(false);
+        });
+
+        startButton.setFitHeight(80);
+        startButton.setPreserveRatio(true);
+        startButton.setLayoutX(100);
+        startButton.setLayoutY(440);
+        root.getChildren().add(startButton);
+
+
+
+        // restartButton
+        restartButton.setOnMouseClicked(event1 -> {
+
                     score = 0;
                     objectSpeed = 2;
                     objectsDropped = 0;
@@ -77,7 +96,8 @@ public class GhostBustersApplication extends Application {
                     gameOverText.setVisible(false);
                     restartButton.setVisible(false);
 
-                    root.getChildren().add(scoreText);
+                    scoreText.setText("Score: " + score);
+
 
                     object1.setLayoutX(10);
                     object1.setLayoutY(0);
@@ -86,27 +106,35 @@ public class GhostBustersApplication extends Application {
 
                     root.getChildren().addAll(object1, object2);
 
-                }
-            });
-            restartButton.setLayoutX(200);
-            restartButton.setLayoutY(50);
-            restartButton.setVisible(false);
-            root.getChildren().add(restartButton);
+
+                });
+        restartButton.setPreserveRatio(true);
+        restartButton.setFitHeight(80);
+        restartButton.setLayoutX(100);
+        restartButton.setLayoutY(440);
+        restartButton.setVisible(false);
+        root.getChildren().add(restartButton);
 
 
-        });
+
+
+
+
         //scene
         Scene gameScene = new Scene(root, 400, 600);
         primaryStage.setTitle("GhostBusters");
         primaryStage.setScene(gameScene);
         primaryStage.show();
-        AnimationTimer timer = new AnimationTimer() {
+        timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (objectsDropped >= 3 ) {
+                if (objectsDropped >= 6 ) {
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);
                     restartButton.setVisible(true);
+                    root.getChildren().remove(object2);
+                    root.getChildren().remove(object1);
+
                     return;}
                 int random = (int)Math.floor(Math.random() * 2);
 
@@ -129,7 +157,8 @@ public class GhostBustersApplication extends Application {
                 }
             }
         };
-        timer.start();
+
+
     }
 
 
