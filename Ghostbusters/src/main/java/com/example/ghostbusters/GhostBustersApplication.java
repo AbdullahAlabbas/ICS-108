@@ -29,8 +29,12 @@ public class GhostBustersApplication extends Application {
 
     final Ghost ghost1 = new Ghost(10,"Ghost.png");
     final Ghost ghost2 = new Ghost(5,"Ghost2.png");
+    final Ghost ghost3 = new Ghost(15,"Ghost3.png");
+
     final ImageView object1 = ghost1.object();
     final ImageView object2 = ghost2.object();
+    final ImageView object3= ghost3.object();
+
     final Text scoreText = new Text("Score: 0");
     final Text gameOverText = new Text("Game Over");
     final ImageView restartButton = new ImageView(new Image("Retrybutton.png"));
@@ -50,6 +54,7 @@ public class GhostBustersApplication extends Application {
         scoreText.setFill(Color.WHITE);
         scoreText.setLayoutX(10);
         scoreText.setLayoutY(30);
+        scoreText.setVisible(false);
         //gameOverText
         gameOverText.setFont(Font.font("Chiller", 90));
         gameOverText.setFill(Color.RED);
@@ -70,12 +75,19 @@ public class GhostBustersApplication extends Application {
             scoreText.setText("Score: " + score);
             objectSpeed += 1;
         });
+        object3.setOnMouseClicked(event -> {
+            root.getChildren().remove(object3);
+            score += ghost3.getScore();
+            scoreText.setText("Score: " + score);
+            objectSpeed += 1;
+        });
 
         //startButton
         startButton.setOnMouseClicked(mouseEvent -> {
 
             timer.start();
             startButton.setVisible(false);
+            scoreText.setVisible(true);
         });
 
         startButton.setFitHeight(80);
@@ -92,7 +104,6 @@ public class GhostBustersApplication extends Application {
                     score = 0;
                     objectSpeed = 2;
                     objectsDropped = 0;
-
                     gameOverText.setVisible(false);
                     restartButton.setVisible(false);
 
@@ -103,8 +114,10 @@ public class GhostBustersApplication extends Application {
                     object1.setLayoutY(0);
                     object2.setLayoutX(5);
                     object2.setLayoutY(0);
+                    object3.setLayoutX(7.5);
+                    object3.setLayoutY(0);
 
-                    root.getChildren().addAll(object1, object2);
+                    root.getChildren().addAll(object1, object2,object3);
 
 
                 });
@@ -134,12 +147,16 @@ public class GhostBustersApplication extends Application {
                     restartButton.setVisible(true);
                     root.getChildren().remove(object2);
                     root.getChildren().remove(object1);
+                    root.getChildren().remove(object3);
+
 
                     return;}
                 int random = (int)Math.floor(Math.random() * 2);
 
                     object1.setLayoutY(object1.getLayoutY() + objectSpeed+2);
                     object2.setLayoutY(object2.getLayoutY() + objectSpeed+1);
+                    object3.setLayoutY(object3.getLayoutY() + objectSpeed+0.5);
+
 
                 if (object1.getLayoutY() > 600 ) {
                     double randomX = Math.random() * 300;
@@ -154,6 +171,13 @@ public class GhostBustersApplication extends Application {
                     object2.setLayoutY(0);
                     objectsDropped++;
                     root.getChildren().add(object2);
+                }
+                if(object3.getLayoutY() > 600){
+                    double randomX = Math.random()*300;
+                    object3.setLayoutX(randomX);
+                    object3.setLayoutY(0);
+                    objectsDropped++;
+                    root.getChildren().add(object3);
                 }
             }
         };
