@@ -24,5 +24,4 @@ public class Ghost {
         this.score = score;
     }
 
-
 }
