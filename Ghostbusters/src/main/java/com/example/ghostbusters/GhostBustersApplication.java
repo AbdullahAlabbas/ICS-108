@@ -82,14 +82,12 @@ public class GhostBustersApplication extends Application {
             root.getChildren().remove(object2);
             score += ghost2.getScore();
             scoreText.setText("Score: " + score);
-            objectSpeed += 1;
         });
 
         object3.setOnMouseClicked(event -> {
             root.getChildren().remove(object3);
             score += ghost3.getScore();
             scoreText.setText("Score: " + score);
-            objectSpeed += 1;
         });
 
 
@@ -160,6 +158,7 @@ public class GhostBustersApplication extends Application {
                 if (stope) {
                     return;
                 }
+<<<<<<< HEAD
                 if (objectsDropped >= 20) {
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);

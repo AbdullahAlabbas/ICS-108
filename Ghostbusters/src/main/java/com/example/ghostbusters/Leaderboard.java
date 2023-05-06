@@ -2,6 +2,7 @@ package com.example.ghostbusters;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Leaderboard {
     private ArrayList<Player> topPlayers;
