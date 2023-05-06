@@ -108,11 +108,13 @@ public class GhostBustersApplication extends Application {
         startButton.setLayoutY(440);
         root.getChildren().add(startButton);
 
+        //gameSign
         gameSign.setVisible(true);
         gameSign.setFitHeight(500);
         gameSign.setLayoutX(-25);
         gameSign.setPreserveRatio(true);
         root.getChildren().add(gameSign);
+        
         // restartButton
         restartButton.setOnMouseClicked(event1 -> {
 
@@ -158,7 +160,7 @@ public class GhostBustersApplication extends Application {
                 if (stope) {
                     return;
                 }
-                if (objectsDropped >= 9) {
+                if (objectsDropped >= 20) {
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);
                     restartButton.setVisible(true);
@@ -181,7 +183,7 @@ public class GhostBustersApplication extends Application {
                     return;
 
                 }
-                int random = (int) Math.floor(Math.random() * 2);
+
 
                 object1.setLayoutY(object1.getLayoutY() + objectSpeed + 2);
                 object2.setLayoutY(object2.getLayoutY() + objectSpeed + 1);
