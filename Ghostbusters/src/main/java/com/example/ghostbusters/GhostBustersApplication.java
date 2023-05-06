@@ -15,7 +15,8 @@ import javafx.stage.Stage;
 public class GhostBustersApplication extends Application {
 
         private int score = 0;
-        private int objectSpeed = 2;
+        private double objectSpeed = 2;
+        private double speedRate = 0.25;
         private int objectsDropped = 0;
         final private Pane root = new Pane();
         private boolean stope;
@@ -76,18 +77,20 @@ public class GhostBustersApplication extends Application {
             root.getChildren().remove(object1);
             score += ghost1.getScore();
             scoreText.setText("Score: " + score);
-            objectSpeed += 1;
+            objectSpeed = objectSpeed + speedRate;
         });
         object2.setOnMouseClicked(event -> {
             root.getChildren().remove(object2);
             score += ghost2.getScore();
             scoreText.setText("Score: " + score);
+            objectSpeed = objectSpeed + speedRate;
         });
 
         object3.setOnMouseClicked(event -> {
             root.getChildren().remove(object3);
             score += ghost3.getScore();
             scoreText.setText("Score: " + score);
+            objectSpeed = objectSpeed + speedRate;
         });
 
 
@@ -160,6 +163,9 @@ public class GhostBustersApplication extends Application {
                 }
 <<<<<<< HEAD
                 if (objectsDropped >= 20) {
+=======
+                if (objectsDropped >= 31) {
+>>>>>>> 69bcd0ed75cae526faa8dea6d7ec4d4ec5bab0c2
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);
                     restartButton.setVisible(true);
