@@ -161,11 +161,8 @@ public class GhostBustersApplication extends Application {
                 if (stope) {
                     return;
                 }
-<<<<<<< HEAD
-                if (objectsDropped >= 20) {
-=======
+
                 if (objectsDropped >= 31) {
->>>>>>> 69bcd0ed75cae526faa8dea6d7ec4d4ec5bab0c2
                     gameOverText.setText("Game Over\nScore: " + score);
                     gameOverText.setVisible(true);
                     restartButton.setVisible(true);
