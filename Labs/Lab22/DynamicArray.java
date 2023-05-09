@@ -44,8 +44,4 @@ public class DynamicArray<T> {
         this.array[this.size] = item;
         this.size++;
     }
-    
-
-    
-
 }

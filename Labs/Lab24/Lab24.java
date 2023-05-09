@@ -20,3 +20,4 @@ public class Lab24
             catch (FileNotFoundException e) {System.out.println("Error: file not found");}
 
         for (String major : majors.keySet()) {System.out.printf("%s: %s\n", major, majors.get(major));}}}
+
