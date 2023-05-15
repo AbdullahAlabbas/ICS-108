@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5e81a-ac0d-4b84-85a6-a32788f1983f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Ghostbusters/src/main/java/com/example/ghostbusters/GhostBustersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ghostbusters/src/main/java/com/example/ghostbusters/GhostBustersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ghostbusters/target/classes/com/example/ghostbusters/GhostBustersApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ghostbusters/target/classes/com/example/ghostbusters/GhostBustersApplication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ghostbusters/target/classes/com/example/ghostbusters/GhostBustersApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ghostbusters/target/classes/com/example/ghostbusters/GhostBustersApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +53,21 @@
       <recent name="C:\Users\seabd\OneDrive - KFUPM\Documents\GitHub\ICS-108\Labs\Lab25" />
       <recent name="C:\Users\seabd\OneDrive - KFUPM\Documents\GitHub\ICS-108\Ghostbusters\src\main\resources" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ICS-108" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ICS-108" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
