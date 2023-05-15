@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ICS-108.iml" filepath="$PROJECT_DIR$/ICS-108.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LabTest/LabTest.iml" filepath="$PROJECT_DIR$/LabTest/LabTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labs/Labs.iml" filepath="$PROJECT_DIR$/Labs/Labs.iml" />
+    </modules>
+  </component>
+</project>
